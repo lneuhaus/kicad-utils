@@ -70,7 +70,7 @@ export class Schematic {
 	parse(lines: Array<string>): void {
 		const version = lines.shift();
 		const SCHEMATIC_HEADER = "EESchema Schematic File Version ";
-		const SUPPORTED_VERSION = 2;
+		const SUPPORTED_VERSION = 4;
 		if (!version || version.indexOf(SCHEMATIC_HEADER) !== 0) {
 			throw "unknwon library format";
 		}

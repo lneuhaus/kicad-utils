@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DrawPin = exports.DrawText = exports.DrawSquare = exports.DrawPolyline = exports.DrawCircle = exports.DrawArc = exports.Draw = exports.FieldN = exports.Field0 = exports.LibComponent = exports.Library = exports.ParseError = void 0;
 /**
  * imported from:
  * eeschema/lib_text.cpp
@@ -48,20 +49,20 @@ class ParseError extends Error {
 }
 exports.ParseError = ParseError;
 class Library {
+    constructor() {
+        this.components = [];
+    }
     static load(content) {
         const lines = content.split(/\r?\n/);
         const lib = new this();
         lib.parse(lines);
         return lib;
     }
-    constructor() {
-        this.components = [];
-    }
     parse(lines) {
         const totalLines = lines.length;
         const version = lines.shift();
         const LIBRARY_HEADER = "EESchema-LIBRARY Version ";
-        const SUPPORTED_VERSION = 2.3;
+        const SUPPORTED_VERSION = 2.4;
         if (!version || version.indexOf(LIBRARY_HEADER) !== 0) {
             throw "unknwon library format";
         }

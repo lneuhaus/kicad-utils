@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SchPlotter = void 0;
 const kicad_common_1 = require("./kicad_common");
 const kicad_lib_1 = require("./kicad_lib");
 const kicad_sch_1 = require("./kicad_sch");

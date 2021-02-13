@@ -1,6 +1,7 @@
 "use strict";
 //#!tsc && NODE_PATH=dist/src node dist/sketch3.js 
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Target = exports.Segment = exports.CornerSmoothingType = exports.PadConnection = exports.HatchStyle = exports.Zone = exports.Via = exports.Track = exports.MODULE_ATTR = exports.TextModuleType = exports.TextModule = exports.PadAttr = exports.PadShape = exports.Pad = exports.LibId = exports.Module = exports.Dimension = exports.Unit = exports.Text = exports.EdgeModule = exports.DrawSegment = exports.Shape = exports.NetInfoItem = exports.NetClass = exports.NetClasses = exports.ViaType = exports.BoardDesignSetting = exports.ViaDimension = exports.LSET = exports.Board = exports.Layer = exports.LayerType = exports.PCB = exports.IsCopperLayer = exports.PadDrillShape = exports.PCB_LAYER_ID = void 0;
 // based on:
 // pcbnew/pcb_parser.cpp 
 /*

@@ -31,6 +31,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Token = void 0;
 class Token {
     constructor(token, line = 0) {
         this.token = token;
@@ -50,6 +51,7 @@ class Token {
         return this.token;
     }
 }
+exports.Token = Token;
 Token.LEFT = new Token("(");
 Token.RIGHT = new Token(")");
 // common/pcb.keywords 
@@ -239,5 +241,4 @@ Token.zone_clearance = new Token("zone_clearance");
 Token.zone_connect = new Token("zone_connect");
 Token.zone_type = new Token("zone_type");
 Token.zones = new Token("zones");
-exports.Token = Token;
 //# sourceMappingURL=kicad_pcb_token.js.map

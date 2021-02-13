@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SVGPlotter = exports.CanvasPlotter = exports.Plotter = void 0;
 const kicad_common_1 = require("./kicad_common");
 const kicad_strokefont_1 = require("./kicad_strokefont");
 const DEFAULT_LINE_WIDTH = 6;
@@ -508,9 +509,9 @@ class SVGPlotter extends Plotter {
         return String(s).replace(/[<>&]/g, (_) => map[_]);
     }
 }
+exports.SVGPlotter = SVGPlotter;
 SVGPlotter.font = {
     family: '"Lucida Console", Monaco, monospace',
     widthRatio: 0.60009765625,
 };
-exports.SVGPlotter = SVGPlotter;
 //# sourceMappingURL=kicad_plotter.js.map

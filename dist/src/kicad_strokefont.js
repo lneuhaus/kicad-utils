@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.StrokeFont = exports.Glyph = void 0;
 const kicad_common_1 = require("./kicad_common");
 const kicad_strokefont_data_1 = require("./kicad_strokefont_data");
 const INTERLINE_PITCH_RATIO = 1.5;

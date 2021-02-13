@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.STROKE_FONT = void 0;
 exports.STROKE_FONT = [
     /* // BASIC LATIN (0020-007F) */
     "JZ",

@@ -28,6 +28,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SheetPin = exports.NoConn = exports.Connection = exports.Entry = exports.Wire = exports.Text = exports.Bitmap = exports.Descr = exports.Field = exports.SchComponent = exports.Sheet = exports.SchItem = exports.Schematic = exports.TextOrientationType = void 0;
 const kicad_common_1 = require("./kicad_common");
 var TextOrientationType;
 (function (TextOrientationType) {
@@ -38,16 +39,16 @@ var TextOrientationType;
 })(TextOrientationType = exports.TextOrientationType || (exports.TextOrientationType = {}));
 ;
 class Schematic {
+    constructor() {
+        this.libs = [];
+        this.items = [];
+        this.parsed = false;
+    }
     static load(content) {
         const lines = content.split(/\r?\n/);
         const sch = new this();
         sch.parse(lines);
         return sch;
-    }
-    constructor() {
-        this.libs = [];
-        this.items = [];
-        this.parsed = false;
     }
     parse(lines) {
         const version = lines.shift();
@@ -361,8 +362,8 @@ class Bitmap extends SchItem {
         this.size = new kicad_common_1.Size(width, height);
     }
 }
-Bitmap.PNG_SIGNATURE = "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A";
 exports.Bitmap = Bitmap;
+Bitmap.PNG_SIGNATURE = "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A";
 class Text extends SchItem {
     constructor(tokens) {
         super();

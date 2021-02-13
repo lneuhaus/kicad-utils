@@ -596,9 +596,13 @@ export class SchPlotter {
 			if (item instanceof SchComponent) {
 				let component;
 				for (let lib of libs) {
+                                        console.log("lib.components", lib.components);
 					if (!lib) continue;
 					component = lib.findByName(item.name);
 					if (component) break;
+                                        let new_name = item.name.replace(':','_')
+                                        component = lib.findByName(new_name)
+                                        if (component) break;
 				}
 				if (!component) {
 					console.warn("component " + item.name + " is not found in libraries");

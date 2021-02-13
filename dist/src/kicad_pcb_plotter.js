@@ -29,6 +29,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PCBPlotOptions = exports.DrillMarksType = exports.PCBPlotter = void 0;
 /**
  *
  * IMPL is NOT COMPLETED!!

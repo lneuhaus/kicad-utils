@@ -25144,7 +25144,7 @@ class Library {
         const totalLines = lines.length;
         const version = lines.shift();
         const LIBRARY_HEADER = "EESchema-LIBRARY Version ";
-        const SUPPORTED_VERSION = 2.3;
+        const SUPPORTED_VERSION = 2.4;
         if (!version || version.indexOf(LIBRARY_HEADER) !== 0) {
             throw "unknwon library format";
         }
@@ -29219,7 +29219,7 @@ class Schematic {
     parse(lines) {
         const version = lines.shift();
         const SCHEMATIC_HEADER = "EESchema Schematic File Version ";
-        const SUPPORTED_VERSION = 2;
+        const SUPPORTED_VERSION = 4;
         if (!version || version.indexOf(SCHEMATIC_HEADER) !== 0) {
             throw "unknwon library format";
         }
@@ -30107,9 +30107,14 @@ class SchPlotter {
             if (item instanceof kicad_sch_1.SchComponent) {
                 let component;
                 for (let lib of libs) {
+                    console.log("lib.components", lib.components);
                     if (!lib)
                         continue;
                     component = lib.findByName(item.name);
+                    if (component)
+                        break;
+                    let new_name = item.name.replace(':', '_');
+                    component = lib.findByName(new_name);
                     if (component)
                         break;
                 }

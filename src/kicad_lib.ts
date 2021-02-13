@@ -78,7 +78,7 @@ export class Library {
 		const totalLines = lines.length;
 		const version = lines.shift();
 		const LIBRARY_HEADER = "EESchema-LIBRARY Version ";
-		const SUPPORTED_VERSION = 2.3;
+		const SUPPORTED_VERSION = 2.4;
 		if (!version || version.indexOf(LIBRARY_HEADER) !== 0) {
 			throw "unknwon library format";
 		}
