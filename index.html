@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+		<title></title>
+		<link rev="made" href="mailto:cho45@lowreal.net"/>
+	</head>
+	<body>
+		<ul>
+			<li><a href="./viewer.html">KiCAD Schematic/PCB Viewer</a></li>
+			<li><a href="./library.html">KiCAD Library Viewer</a></li>
+
+		</ul>
+
+		<p>
+			bookmarklet:
+			<a href="" id="bookmarklet">KiCAD Viewer</a>
+		</p>
+
+		<p>
+			for development:
+			<a href="./schematic.html">KiCAD Schematic Viewer</a>
+			<a href="./pcb.html">KiCAD PCB Viewer</a>
+		</p>
+
+		<script>
+			const script = `location="https://cho45.stfuawsc.com/kicad-utils/static/viewer.html?url="+encodeURIComponent(Array.from(document.querySelectorAll("a[href*='/blob/']")).map( (a) => a.href ).filter( (u) => u.match(/\\.(sch|lib|kicad_pcb)$/) ).join("\\n"))`;
+			// const script = `location="http://127.0.0.1:5000/viewer.html?url="+encodeURIComponent(Array.from(document.querySelectorAll("a[href*='/blob/']")).map( (a) => a.href ).filter( (u) => u.match(/\\.(sch|lib|kicad_pcb)$/) ).join("\\n"))`;
+			const bookmarklet = 'javascript:' + encodeURIComponent(script);
+			document.getElementById('bookmarklet').href = bookmarklet;
+		</script>
+	</body>
+</html>
